@@ -32,12 +32,13 @@ Thus began Zarathustra’s down-going.""";
         body: Center(
           child: Container(
             color: Color.fromARGB(255, 230, 230, 230),
-            constraints: BoxConstraints(minWidth: 100, maxWidth: 800),
-            padding: EdgeInsets.all(16.0),
+            constraints: BoxConstraints(minWidth: 200, maxWidth: 800),
+            padding: EdgeInsets.fromLTRB(60, 60, 60, 60),
             child: Text(sample_text,
               style: GoogleFonts.openSans(
-                fontSize: 24
-              )
+                fontSize: 22
+              ),
+              textAlign: TextAlign.justify
             )
           )
         ),
