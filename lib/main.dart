@@ -25,23 +25,16 @@ Thus began Zarathustra’s down-going.""";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-          scaffoldBackgroundColor: const Color.fromARGB(255, 100, 100, 100),
-        ),
       home: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 120, 120, 120),
         body: Center(
-          child: Container(
-            color: Color.fromARGB(255, 230, 230, 230),
-            constraints: BoxConstraints(minWidth: 200, maxWidth: 800),
-            padding: EdgeInsets.fromLTRB(60, 60, 60, 60),
-            child: Text(sample_text,
-              style: GoogleFonts.openSans(
-                fontSize: 22
-              ),
-              textAlign: TextAlign.justify
-            )
-          )
-        ),
+            child: Container(
+                color: const Color.fromARGB(255, 230, 230, 230),
+                constraints: const BoxConstraints(minWidth: 200, maxWidth: 800),
+                padding: const EdgeInsets.fromLTRB(60, 60, 60, 60),
+                child: Text(sample_text,
+                    style: GoogleFonts.openSans(fontSize: 22),
+                    textAlign: TextAlign.justify))),
       ),
     );
   }
