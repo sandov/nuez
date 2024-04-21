@@ -1,9 +1,9 @@
 # Nuez
 
-## Build Instructions:
+## Build:
 
-	docker build -t nuez_build:1 .
-    docker run -it -v $(pwd):/root/project/ nuez_build:1
+	docker build -t nuez-build .
+    docker run -it -v $(pwd):/root/project/ nuez-build
 
 ## Run:
 
