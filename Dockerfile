@@ -17,5 +17,9 @@ RUN chown -R -v root /root/flutter/
 
 RUN /root/flutter/bin/flutter doctor
 
-CMD ["sleep", "10h"]
+COPY .run_script /root/.script
+
+RUN chmod +x /root/.script
+
+CMD ["/root/.script"]
 
