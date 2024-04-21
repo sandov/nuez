@@ -2,6 +2,11 @@
 
 cd /root/project/
 /root/flutter/bin/flutter build linux
+
+# Necessary to avoid permission problems on next build
+
 rm -rf .dart_tool/
+rm -rf .flutter-plugins
+rm -rf .flutter-plugins-dependencies
 
 
