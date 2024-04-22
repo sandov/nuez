@@ -27,15 +27,20 @@ Thus began Zarathustra’s down-going.""";
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 120, 120, 120),
-        body: Center(
+        body: SingleChildScrollView(
+          child: Center(
             child: Container(
-                color: const Color.fromARGB(255, 230, 230, 230),
-                constraints: const BoxConstraints(minWidth: 200, maxWidth: 800),
-                padding: const EdgeInsets.fromLTRB(60, 60, 60, 60),
-                child: Text(sample_text,
-                    style: GoogleFonts.openSans(fontSize: 22),
-                    textAlign: TextAlign.justify))),
-      ),
+              color: const Color.fromARGB(255, 230, 230, 230),
+              constraints: const BoxConstraints(minWidth: 200, maxWidth: 800),
+              padding: const EdgeInsets.fromLTRB(60, 60, 60, 60),
+              child: Text(sample_text,
+                style: GoogleFonts.openSans(fontSize: 22),
+                textAlign: TextAlign.justify
+              )
+            )
+          )
+        )
+      )
     );
   }
 }
