@@ -2,53 +2,32 @@
 
 ## Set up the platform for building: 
 
-The official platform to build Nuez is Linux Mint 21.3.
+The build process uses [podman](https://podman.io/) and [distrobox](https://github.com/89luca89/distrobox?tab=readme-ov-file#installation) in order to avoid installing Flutter and its dependencies on the base host system.
 
-The build process uses [podman](https://podman.io/) and [distrobox](https://github.com/89luca89/distrobox?tab=readme-ov-file#installation) in order to avoid installing Flutter dependencies on the base host system.
-
-1. Install Flutter without dependencies:
-
-    `curl -L -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.19.6-stable.tar.xz`
-
-    `tar xf flutter_linux_3.19.6-stable.tar.xz`
-
-    `rm flutter_linux_3.19.6-stable.tar.xz`
-
-    `mkdir -p ~/Documents/prog/`
-
-    `mv flutter/ ~/Documents/prog`
-
-    `mkdir -p ~/.local/bin`
-
-    `ln -s ~/Documents/prog/flutter/bin/flutter ~/.local/bin/flutter`
-
-    `ln -s ~/Documents/prog/flutter/bin/dart ~/.local/bin/dart`
-
-    `chmod +x ~/.local/bin/dart ~/.local/bin/flutter`
-
-    `source ~/.profile`
-
-    `flutter doctor`
-
-2. Install podman using apt
+1. Install podman using apt:
 
     `sudo apt install podman`
     
-3. Install [distrobox](https://github.com/89luca89/distrobox?tab=readme-ov-file#installation):
+2. Install [distrobox](https://github.com/89luca89/distrobox?tab=readme-ov-file#installation):
 
     `curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local`
 
-4. Create a ubuntu box with the Flutter dependencies. This may take a while, depending on your connection speed
-
-    `distrobox create --name ubu --image ubuntu --additional-packages "curl git unzip xz-utils zip libglu1-mesa clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev"`
-
-5. Enter the box
-
-    `distrobox enter ubu`
-
-## Build
+3. Build container image. This may take several minutes:
 
     cd nuez/
+    podman build -t nuez .
+
+4. Create a box from the generated image:
+
+    distrobox create --name nuez --image nuez
+
+5. Enter the box, this may take a while, but only the first time:
+
+    `distrobox enter nuez-build`
+
+## Build
+    
+    dart pub get
     flutter build linux
 
 ## Run binary:
@@ -57,5 +36,6 @@ The build process uses [podman](https://podman.io/) and [distrobox](https://gith
 
 ## Run with hot reload
 
-    cd nuez/
+    dart pub get 
     flutter run
+
