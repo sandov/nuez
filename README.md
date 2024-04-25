@@ -24,7 +24,7 @@ The build process uses [podman](https://podman.io/) and [distrobox](https://gith
 
 5. Enter the box, this may take a while, but only the first time:
 
-    `distrobox enter nuez-build`
+    `distrobox enter nuez`
 
 ## Build
 
@@ -41,4 +41,28 @@ Inside the box:
 
     `dart pub get`
     `flutter run`
+
+## Get out of box:
+
+    `Ctrl+D`
+
+## Stop box:
+
+    `distrobox stop nuez`
+
+## Restart and re-enter box:
+
+    `distrobox enter nuez`
+
+## Clean up:
+
+Dart creates a directory on your $HOME. Remove it:
+
+    `rm -rf ~/.dart-tool/`
+
+If you want to purge the Nuez build containers and images out of the system:
+
+    `distrobox stop nuez`
+    `distrobox rm nuez`
+    `podman rmi nuez`
 
