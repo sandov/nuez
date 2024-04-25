@@ -14,28 +14,30 @@ The build process uses [podman](https://podman.io/) and [distrobox](https://gith
 
 3. Build container image. This may take several minutes:
 
-    cd nuez/
-    podman build -t nuez .
+    `cd nuez/`
+    `podman build -t nuez .`
 
 4. Create a box from the generated image:
 
-    distrobox create --name nuez --image nuez
+    `distrobox create --name nuez --image nuez`
 
 5. Enter the box, this may take a while, but only the first time:
 
     `distrobox enter nuez-build`
 
 ## Build
+
+Inside the box:
     
-    dart pub get
-    flutter build linux
+    `dart pub get`
+    `flutter build linux`
 
 ## Run binary:
 
-    ./build/linux/x64/release/bundle/nuez
+    `./build/linux/x64/release/bundle/nuez`
 
 ## Run with hot reload
 
-    dart pub get 
-    flutter run
+    `dart pub get`
+    `flutter run`
 
