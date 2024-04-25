@@ -15,6 +15,7 @@ The build process uses [podman](https://podman.io/) and [distrobox](https://gith
 3. Build container image. This may take several minutes:
 
     `cd nuez/`
+
     `podman build -t nuez .`
 
 4. Create a box from the generated image:
