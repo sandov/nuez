@@ -26,7 +26,7 @@ The build process uses [podman](https://podman.io/) and [distrobox](https://gith
 
     `chmod +x ~/.local/bin/dart ~/.local/bin/flutter`
 
-    `source .profile`
+    `source ~/.profile`
 
     `flutter doctor`
 
@@ -40,18 +40,22 @@ The build process uses [podman](https://podman.io/) and [distrobox](https://gith
 
 4. Create a ubuntu box with the Flutter dependencies. This may take a while, depending on your connection speed
 
-    `distrobox create --name ubu2 --image ubuntu --additional-packages "curl git unzip xz-utils zip libglu1-mesa clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev"`
+    `distrobox create --name ubu --image ubuntu --additional-packages "curl git unzip xz-utils zip libglu1-mesa clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev"`
+
+5. Enter the box
+
+    `distrobox enter ubu`
 
 ## Build
 
-    `cd nuez/`
-    `flutter build linux`
+    cd nuez/
+    flutter build linux
 
 ## Run binary:
 
-    `./build/linux/x64/release/bundle/nuez`
+    ./build/linux/x64/release/bundle/nuez
 
 ## Run with hot reload
 
-    `cd nuez/`
-    `flutter run`
+    cd nuez/
+    flutter run
