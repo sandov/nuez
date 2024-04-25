@@ -2,7 +2,7 @@
 
 ## Set up the platform for building: 
 
-The build process uses [podman](https://podman.io/) and [distrobox](https://github.com/89luca89/distrobox?tab=readme-ov-file#installation) in order to avoid installing Flutter and its dependencies on the base host system.
+The build process uses [podman](https://podman.io/) and [distrobox](https://github.com/89luca89/distrobox?tab=readme-ov-file#installation) in order to avoid installing Flutter and its dependencies on the base host system, while retaining the ability to use `flutter run` with hot-reload and hot-restart.
 
 1. Install podman using apt:
 
