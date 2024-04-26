@@ -6,63 +6,73 @@ The build process uses [podman](https://podman.io/) and [distrobox](https://gith
 
 1. Install podman using apt:
 
-    `sudo apt install podman`
+    ```
+    sudo apt install podman
+    ```
     
 2. Install [distrobox](https://github.com/89luca89/distrobox?tab=readme-ov-file#installation):
 
-    `curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local`
+    ```
+    curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
+    ```
 
-3. Build container image. This may take several minutes:
+4. Build container image. This may take several minutes:
 
-    `cd nuez/`
+    ```
+    cd nuez/
 
-    `podman build -t nuez .`
+    podman build -t nuez .
+    ```
 
-4. Create a box from the generated image:
+5. Create a box from the generated image:
 
-    `distrobox create --name nuez --image nuez`
+    ```
+    distrobox create --name nuez --image nuez
+    ```
 
-5. Enter the box, this may take a while, but only the first time:
+6. Enter the box, this may take a while, but only the first time:
 
-    `distrobox enter nuez`
+    ```
+    distrobox enter nuez
+    ```
 
 ## Build
 
 Inside the box:
-    
-    `dart pub get`
-    `flutter build linux`
+
+    dart pub get
+    flutter build linux    
 
 ## Run binary:
 
-    `./build/linux/x64/release/bundle/nuez`
+    ./build/linux/x64/release/bundle/nuez
 
 ## Run with hot reload
 
-    `dart pub get`
-    `flutter run`
+    dart pub get
+    flutter run
 
 ## Get out of box:
 
-    `Ctrl+D`
+    Ctrl+D
 
 ## Stop box:
 
-    `distrobox stop nuez`
+    distrobox stop nuez
 
 ## Restart and re-enter box:
 
-    `distrobox enter nuez`
+    distrobox enter nuez
 
 ## Clean up:
 
 Dart creates a directory on your $HOME. Remove it:
 
-    `rm -rf ~/.dart-tool/`
+    rm -rf ~/.dart-tool/
 
 If you want to purge the Nuez build containers and images out of the system:
 
-    `distrobox stop nuez`
-    `distrobox rm nuez`
-    `podman rmi nuez`
+    distrobox stop nuez
+    distrobox rm nuez
+    podman rmi nuez
 
