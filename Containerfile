@@ -25,5 +25,7 @@ RUN ln -s /flutter/flutter/bin/dart /bin/dart
 
 USER 1000:1000
 
+ENV PUB_CACHE=/home/anon/pub-cache
+
 RUN flutter doctor
 
