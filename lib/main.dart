@@ -8,7 +8,7 @@ void main() {
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
-  static const String sample_text =
+  static const String sampleText =
       """When Zarathustra was thirty years old, he left his home and the lake of his home, and went into the mountains. There he enjoyed his spirit and solitude, and for ten years did not weary of it. But at last his heart changed﻿—and rising one morning with the rosy dawn, he went before the sun, and spake thus unto it:
 Thou great star! What would be thy happiness if thou hadst not those for whom thou shinest!
 For ten years hast thou climbed hither unto my cave: thou wouldst have wearied of thy light and of the journey, had it not been for me, mine eagle, and my serpent.
@@ -33,14 +33,17 @@ Thus began Zarathustra’s down-going.""";
               color: const Color.fromARGB(255, 230, 230, 230),
               constraints: const BoxConstraints(minWidth: 200, maxWidth: 800),
               padding: const EdgeInsets.fromLTRB(60, 60, 60, 60),
-              child: Text(sample_text,
-                style: GoogleFonts.openSans(fontSize: 22),
-                textAlign: TextAlign.justify
-              )
-            )
-          )
-        )
-      )
+              child: Text(
+                sampleText,
+                style: GoogleFonts.openSans(
+                  fontSize: 22,
+                ),
+                textAlign: TextAlign.justify,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
