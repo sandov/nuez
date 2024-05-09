@@ -2,21 +2,11 @@
 
 ## Set up the platform for building: 
 
-The build process uses [podman](https://podman.io/) and [distrobox](https://github.com/89luca89/distrobox?tab=readme-ov-file#installation) in order to avoid installing Flutter and its dependencies on the base host system, while retaining the ability to use `flutter run` with hot-reload and hot-restart.
+The build process uses [podman](https://podman.io/) and [distrobox](https://distrobox.it) in order to avoid installing Flutter and its dependencies on the base host system, while retaining the ability to use `flutter run` with hot-reload and hot-restart.
 
-1. Install podman using apt:
+1. Install podman and distrobox
 
-    ```
-    sudo apt install podman
-    ```
-    
-2. Install [distrobox](https://github.com/89luca89/distrobox?tab=readme-ov-file#installation):
-
-    ```
-    curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
-    ```
-
-4. Build container image. This may take several minutes:
+2. Build container image. This may take several minutes:
 
     ```
     cd nuez/
@@ -24,13 +14,13 @@ The build process uses [podman](https://podman.io/) and [distrobox](https://gith
     podman build -t nuez .
     ```
 
-5. Create a box from the generated image:
+3. Create a box from the generated image:
 
     ```
     distrobox create --name nuez --image nuez
     ```
 
-6. Enter the box, this may take a while, but only the first time:
+4. Enter the box, this may take a while, but only the first time:
 
     ```
     distrobox enter nuez
