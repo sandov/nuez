@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuez/Widgets/main_view.dart';
+import 'package:nuez/main_view.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,12 +10,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: const Text("File")),
-        backgroundColor: const Color.fromARGB(255, 120, 120, 120),
-        body: const MainView(),
-      ),
+    return const MaterialApp(
+      home: MainView(),
     );
   }
 }
