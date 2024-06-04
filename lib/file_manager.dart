@@ -18,9 +18,12 @@ class FileManager {
       "title": epubBook.Title,
       "author": epubBook.Author,
       "firstChapterTitle": epubBook.Chapters?[1].Title,
+      "firstChapterContent": epubBook.Chapters?[1].HtmlContent,
+      "secondChapterTitle": epubBook.Chapters?[2].Title,
+      "secondChapterContent": epubBook.Chapters?[2].HtmlContent,
+      "thirdChapterTitle": epubBook.Chapters?[3].Title,
+      "thirdChapterContent": epubBook.Chapters?[3].HtmlContent,
     };
-
-    print(bookContent?.Html);
 
     return common;
   }
